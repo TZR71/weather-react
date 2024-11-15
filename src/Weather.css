@@ -1,4 +1,45 @@
+
+:root{
+    --primary-color:rgb(134, 121, 121);
+
+}
+
 .Weather{
-    border: 2px solid rgb(235, 232, 232);
-    border-radius: 4px;
+    font-family: "poppins";
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 35px;
+    margin:30px auto;
+   
+   
+}
+
+.Weather h1{
+    font-size: 35px;
+    margin-top: 25px;
+}
+.Weather ul{
+    margin:0;
+    padding:0;
+}
+.Weather li{
+    list-style: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    
+}
+.Weather img{
+    max-height: 120px;
+    margin-right: 8px;
+}
+.Weather .degrees{
+    font-size: 30px;
+    
+}
+.Weather .units{
+    font-size: 12px;
+    position:relative;
+    top: -15px;
+    margin-left: -4px;
+    line-height: 1;
 }
