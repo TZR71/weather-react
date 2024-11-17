@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import CorrectedDate from "./CorrectedDate";
 
 export default function Weather(props) {
   
@@ -16,7 +17,7 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       feels_like: response.data.temperature.feels_like,
       icon: response.data.condition.icon_url,
-      date:"Sunday 12:02",
+      date:new Date(response.data.time*1000),
     });
 
     
@@ -30,7 +31,7 @@ export default function Weather(props) {
               <input
                 type="search"
                 placeholder="Enter a city"
-                class="form-control"
+                className="form-control"
                 autoFocus="on"
               />
             </div>
@@ -47,7 +48,7 @@ export default function Weather(props) {
         <h1>{weatherData.city}</h1>
         <ul>
           <span>
-            <li>{weatherData.date}</li>
+            <li><CorrectedDate date={weatherData.date}/></li>
             <li className="text-capitalize">{weatherData.description}</li>
           </span>
         </ul>
