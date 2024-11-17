@@ -30,10 +30,12 @@
 }
 .Weather img{
     max-height: 120px;
-    margin-right: 8px;
+    margin-left:-20px;
+    
 }
 .Weather .degrees{
-    font-size: 30px;
+    font-size: 35px;
+    
     
 }
 .Weather .units{
