@@ -13,6 +13,9 @@
    
    
 }
+.Weather .btn {
+    box-shadow:  0 5px 10px rgba(0, 0, 0, 0.3);
+}
 
 .Weather h1{
     font-size: 35px;
@@ -39,9 +42,13 @@
     
 }
 .Weather .units{
-    font-size: 12px;
+    font-size: 20px;
     position:relative;
     top: -15px;
     margin-left: -4px;
     line-height: 1;
+}
+.Weather .units a{
+    font-size: 14px;
+
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherDetails from "./WeatherDetails";
-
+import WeatherUnits from "./WeatherUnits";
 import { ColorRing } from 'react-loader-spinner';
 
 
@@ -61,13 +61,12 @@ export default function Weather(props) {
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="btn btn-outline-secondary  w-100"
               />
             </div>
           </div>
         </form>
-        <WeatherDetails details={weatherData}/>
-        
+        <WeatherDetails details={weatherData} />
       </div>
     );
   } else {
