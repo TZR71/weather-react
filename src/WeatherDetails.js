@@ -17,9 +17,8 @@ export default function WeatherDetails(props){
 
         <div className="row">
           <div className="col-6">
-            <img src={props.details.icon} alt={""}></img>{" "}
+            <img src={props.details.icon} alt={""}></img>{" "}            
             <WeatherUnits celcius={props.details.temperature} />
-            
           </div>
           <div className="col-6">
             <ul>
