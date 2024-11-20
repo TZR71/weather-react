@@ -3,14 +3,11 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherDetails from "./WeatherDetails";
 import WeatherForecast from "./WeatherForecast";
-import { ColorRing } from 'react-loader-spinner';
-
-
-
+import { ColorRing } from "react-loader-spinner";
 
 export default function Weather(props) {
-  const [city, setCity]=useState(props.defaultCity);
-  const [weatherData, setWeatherData] = useState({ready:false});
+  const [city, setCity] = useState(props.defaultCity);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     setWeatherData({
@@ -25,23 +22,21 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
       coordinates: response.data.coordinates,
     });
-    
   }
 
-  function search(){
-    const apiKey = "eb0432d8499otf6b1e6a9e4fe11cf387";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  function search() {
+    const apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
-
   }
-  function handleSubmit(event){
+  function handleSubmit(event) {
     event.preventDefault();
     search();
   }
 
-  function handleCityChange(event){
+  function handleCityChange(event) {
     setCity(event.target.value);
-
   }
   if (weatherData.ready) {
     return (

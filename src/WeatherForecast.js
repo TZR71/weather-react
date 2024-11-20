@@ -1,10 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 
-
 export default function WeatherForecast(props) {
+  console.log(props);
   const [ready, setReady] = useState(false);
   const [forecastData, setForecastData] = useState(null);
 
@@ -12,8 +12,8 @@ export default function WeatherForecast(props) {
     setReady(false);
   }, [props.details.coordinates]);
 
-
   function handleResponse(response) {
+    console.log(response.data);
     setForecastData(response.data.daily);
     setReady(true);
   }
@@ -30,19 +30,17 @@ export default function WeatherForecast(props) {
                 </div>
               );
             }
-            
           })}
         </div>
       </div>
     );
   } else {
     const apiKey = "eb0432d8499otf6b1e6a9e4fe11cf387";
-    let longitude= props.details.coordinates.longitude;
-    let latitude=props.details.coordinates.latitude;
+    let city = props.details.coordinates;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${props.details.coordinates.longitude}&lat=${props.details.coordinates.latitude}&key=${apiKey}`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
 
     return null;
   }
-  
 }
